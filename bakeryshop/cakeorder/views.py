@@ -166,8 +166,10 @@ def login_page(request):
 
 
 def reg_page(request):
-    name = request.GET.get('NAME')
-    print(name)
+    if request.method == 'GET':
+        if request.GET:
+            name = request.GET.get('NAME')
+            print(name)
     context = {}
     return render(request, 'reg.html')
 

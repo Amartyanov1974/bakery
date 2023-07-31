@@ -11,7 +11,7 @@ Vue.createApp({
     },
     data() {
         return {
-            schema6: {
+            schema: {
                 name: (value) => {
                     if (value) {
                         return true;
@@ -84,24 +84,13 @@ Vue.createApp({
             },
             Name: '',
             Phone: null,
-            Email: null,
-            Address: null,
-            Dates: null,
-            Time: null,
-            DelivComments: ''
+            Email: null
         }
     },
     methods: {
         ToStep() {
-            this.Designed = false
+            this.Designed = true
             setTimeout(() => this.$refs.ToStep.click(), 0);
-            this.$http.post("index",data).then(function (data, status, request) {
-                if(status ==200){
-                    console.log(data);
-                }
-            },function () {
-                console.log("Error");
-            });
         }
     }
 }).mount('#Reg')
