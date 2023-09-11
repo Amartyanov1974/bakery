@@ -6,23 +6,8 @@ var cakeCosts = loadJson('cake_costs');
 var cake = loadJson('cake');
 
 console.log(cake);
-if (cake != null){
-    var cakeLevels = JSON.stringify(cake.levels_number) || 0;
-    var cakeForm =  JSON.stringify(cake.form) || 0;
-    var cakeTopping = JSON.stringify(cake.topping) || 0;
-    var cakeBerries = JSON.stringify(cake.berry) || 0;
-    var cakeDecor =  JSON.stringify(cake.decor) || 0;
-    var cakeComments = cake.name;
-}
-else {
-    var cakeLevels = 0;
-    var cakeForm =   0;
-    var cakeTopping =  0;
-    var cakeBerries =  0;
-    var cakeDecor =  0;
-    var cakeComments = '';
 
-}
+
 
 
 Vue.createApp({
@@ -140,13 +125,13 @@ Vue.createApp({
                 Decors: cakeCosts['decors'],
                 Words: 500
             },
-            Levels: cakeLevels  ,
-            Form: cakeForm ,
-            Topping: cakeTopping ,
-            Berries: cakeBerries ,
-            Decor: cakeDecor ,
+            Levels: JSON.stringify(cake.levels_number),
+            Form: JSON.stringify(cake.form),
+            Topping: JSON.stringify(cake.topping),
+            Berries: JSON.stringify(cake.berry),
+            Decor: JSON.stringify(cake.decor),
             Words: '',
-            Comments: cakeComments,
+            Comments: cake.name,
             Designed: false,
 
             Name: '',
